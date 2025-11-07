@@ -1,13 +1,14 @@
 # 🎨 UI Maker Agent
 
-이미지 시안을 분석하여 Lua 형태의 UI 구성 파일(.ui)을 자동 생성하는 AI 도구입니다.
+UI Maker Agent는 디자인 시안 이미지를 분석하여 Lua 형식의 UI 파일을 자동으로 생성하는 도구입니다. Google AI를 활용하여 이미지의 UI 구성 요소를 인식하고, 이를 프로그래밍 가능한 형태로 변환합니다.
 
 ## ✨ 주요 기능
 
-- 📸 **이미지 분석**: Google Gemini AI를 활용한 UI 시안 분석
-- 🔄 **자동 변환**: JSON 스키마 기반 구조화된 데이터 생성
-- 📝 **Lua 출력**: UILoader.lua와 호환되는 .ui 파일 생성
-- 🎯 **정확한 좌표**: 상대 좌표 기반 정밀한 위치 계산
+- 🖼️ 이미지 시안 자동 분석
+- 🤖 AI 기반 UI 구성 요소 인식
+- 📄 JSON 중간 형식 생성
+- 🔄 Lua UI 파일 자동 변환
+- 💻 CLI 인터페이스 제공
 
 ## 🚀 설치 및 설정
 
@@ -63,12 +64,15 @@ python main.py --help
 
 ```
 ui_maker_agent/
-├── main.py          # CLI 진입점
-├── agent.py         # AI 분석 엔진
-├── schema.py        # 데이터 스키마 정의
-├── converter.py     # JSON → Lua 변환기
-├── pyproject.toml   # 프로젝트 설정
-└── README.md        # 문서
+├── main.py              # 메인 실행 파일
+├── src/                 # 소스 코드
+│   ├── __init__.py
+│   ├── agent.py         # AI 에이전트 모듈
+│   └── converter.py     # JSON-Lua 변환기
+├── requirements.txt     # 의존성 목록
+├── .env.example        # 환경 변수 템플릿
+├── .gitignore          # Git 무시 파일 목록
+└── README.md           # 프로젝트 문서
 ```
 
 ## 🔧 기술 스택
