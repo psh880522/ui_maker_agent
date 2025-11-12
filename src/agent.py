@@ -107,32 +107,32 @@ def create_ui_file_from_image(image_path: str) -> str:
             system_instruction,
             f"""이 UI 시안 이미지를 분석하여 다음 규칙에 따라 JSON 형식으로 변환해주세요:
 
-1. **노드 타입 식별**:
-   - 배경 이미지: CCSprite 또는 CCScale9Sprite (늘어나야 하는 경우)
-   - 버튼: CCButton (normalFilename, selectedFilename, disabledFilename 필요)
-   - 텍스트: CCStylishLabelTTF
-   - 컨테이너: CCTouchNode
+				1. **노드 타입 식별**:
+				- 배경 이미지: CCSprite 또는 CCScale9Sprite (늘어나야 하는 경우)
+				- 버튼: CCButton (normalFilename, selectedFilename, disabledFilename 필요)
+				- 텍스트: CCStylishLabelTTF
+				- 컨테이너: CCTouchNode
 
-2. **좌표 시스템**: 
-   - 좌하단이 (0,0) 기준
-   - 모든 좌표는 픽셀 단위로 정확히 측정
-   - 중심점 기준으로 배치
+				2. **좌표 시스템**: 
+				- 좌하단이 (0,0) 기준
+				- 모든 좌표는 픽셀 단위로 정확히 측정
+				- 중심점 기준으로 배치
 
-3. **필수 속성** (모든 노드에 반드시 포함):
-   - 기본: type, x, y, width, height, scaleX, scaleY, skewX, skewY, rotation, visible
-   - 배치: anchorpoint, dockPoint (모든 노드 필수!)
-   - 식별: var
-   - 이미지 관련: filename (확장자 .png 포함)
-   - 텍스트: text, fontName, fontSize, alignment, color
-   - 버튼: enabled, normalFilename
+				3. **필수 속성** (모든 노드에 반드시 포함):
+				- 기본: type, x, y, width, height, scaleX, scaleY, skewX, skewY, rotation, visible
+				- 배치: anchorpoint, dockPoint (모든 노드 필수!)
+				- 식별: var
+				- 이미지 관련: filename (확장자 .png 포함)
+				- 텍스트: text, fontName, fontSize, alignment, color
+				- 버튼: enabled, normalFilename
 
-4. **예시 JSON 형식**:
-{json_example}
+				4. **예시 JSON 형식**:
+				{json_example}
 
-**중요**: 
-- 응답은 반드시 유효한 JSON 형식이어야 하며, 마크다운 코드 블록으로 감싸주세요
-- **모든 노드에 dockPoint 속성을 반드시 포함하세요** (UILoader.lua 필수!)
-- 다른 설명 텍스트는 포함하지 마세요""",
+				**중요**: 
+				- 응답은 반드시 유효한 JSON 형식이어야 하며, 마크다운 코드 블록으로 감싸주세요
+				- **모든 노드에 dockPoint 속성을 반드시 포함하세요** (UILoader.lua 필수!)
+				- 다른 설명 텍스트는 포함하지 마세요""",
             img  # 이미지를 contents 배열에 직접 포함
         ]
     )
